@@ -1,0 +1,193 @@
+[
+  {
+    "index": 0,
+    "name": "api-controller",
+    "desc": "Api Controller",
+    "add_time": 1582700473,
+    "up_time": 1582700473,
+    "list": [
+      {
+        "query_path": {
+          "path": "/api/sms/checkIdentifyingCode",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "api-controller"
+        ],
+        "_id": 119851,
+        "method": "POST",
+        "title": "checkIdentifyingCode",
+        "path": "/api/sms/checkIdentifyingCode",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "656d9f2932d4cc002263c208",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"code\": {\n      \"type\": \"integer\",\n      \"format\": \"int32\"\n    },\n    \"data\": {\n      \"type\": \"boolean\"\n    },\n    \"errorDetail\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"errorInfo\": {\n          \"type\": \"string\"\n        },\n        \"errorStack\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"className\": {\n                \"type\": \"string\"\n              },\n              \"fileName\": {\n                \"type\": \"string\"\n              },\n              \"lineNumber\": {\n                \"type\": \"integer\",\n                \"format\": \"int32\"\n              },\n              \"methodName\": {\n                \"type\": \"string\"\n              },\n              \"nativeMethod\": {\n                \"type\": \"boolean\"\n              }\n            },\n            \"$$ref\": \"#/definitions/StackTraceElement\"\n          }\n        },\n        \"occurTime\": {\n          \"type\": \"string\"\n        },\n        \"reqInfo\": {\n          \"type\": \"string\"\n        }\n      },\n      \"$$ref\": \"#/definitions/ErrorDetail\"\n    },\n    \"msg\": {\n      \"type\": \"string\"\n    },\n    \"responseTime\": {\n      \"type\": \"string\"\n    },\n    \"rid\": {\n      \"type\": \"string\"\n    },\n    \"ts\": {\n      \"type\": \"integer\",\n      \"format\": \"int64\"\n    }\n  },\n  \"$$ref\": \"#/definitions/Response«boolean»\"\n}",
+        "req_body_other": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"code\": {\n      \"type\": \"string\"\n    },\n    \"sign\": {\n      \"type\": \"string\"\n    }\n  },\n  \"$$ref\": \"#/definitions/CheckIdentifyingCodeRequest\"\n}",
+        "project_id": 535,
+        "catid": 19370,
+        "uid": 1057,
+        "add_time": 1583806607,
+        "up_time": 1701682985,
+        "__v": 0
+      },
+      {
+        "query_path": {
+          "path": "/api/checkStructure",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "api-controller"
+        ],
+        "_id": 823737,
+        "method": "GET",
+        "title": "checkStructureTree",
+        "path": "/api/checkStructure",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "656d9f2832d4cc002263c200",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [
+          {
+            "required": "1",
+            "_id": "656d9f2832d4cc002263c203",
+            "name": "roleId",
+            "desc": "roleId"
+          },
+          {
+            "required": "1",
+            "_id": "656d9f2832d4cc002263c202",
+            "name": "accountId",
+            "desc": "accountId"
+          },
+          {
+            "required": "1",
+            "_id": "656d9f2832d4cc002263c201",
+            "name": "name",
+            "desc": "name"
+          }
+        ],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"code\": {\n      \"type\": \"integer\",\n      \"format\": \"int32\"\n    },\n    \"data\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"getStructureTreeResponse\": {\n          \"type\": \"object\",\n          \"properties\": {\n            \"structureTreeInfo\": {\n              \"type\": \"array\",\n              \"items\": {\n                \"type\": \"object\",\n                \"properties\": {\n                  \"children\": {\n                    \"type\": \"array\",\n                    \"items\": {\n                      \"type\": \"object\"\n                    }\n                  },\n                  \"disabled\": {\n                    \"type\": \"boolean\"\n                  },\n                  \"fullTitle\": {\n                    \"type\": \"string\"\n                  },\n                  \"title\": {\n                    \"type\": \"string\"\n                  },\n                  \"value\": {\n                    \"type\": \"string\"\n                  }\n                },\n                \"$$ref\": \"#/definitions/GetStructureTreeInfo\"\n              }\n            }\n          },\n          \"$$ref\": \"#/definitions/GetStructureTreeResponse\"\n        },\n        \"res\": {\n          \"type\": \"boolean\"\n        }\n      },\n      \"$$ref\": \"#/definitions/CheckStructureTreeResponse\"\n    },\n    \"errorDetail\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"errorInfo\": {\n          \"type\": \"string\"\n        },\n        \"errorStack\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"className\": {\n                \"type\": \"string\"\n              },\n              \"fileName\": {\n                \"type\": \"string\"\n              },\n              \"lineNumber\": {\n                \"type\": \"integer\",\n                \"format\": \"int32\"\n              },\n              \"methodName\": {\n                \"type\": \"string\"\n              },\n              \"nativeMethod\": {\n                \"type\": \"boolean\"\n              }\n            },\n            \"$$ref\": \"#/definitions/StackTraceElement\"\n          }\n        },\n        \"occurTime\": {\n          \"type\": \"string\"\n        },\n        \"reqInfo\": {\n          \"type\": \"string\"\n        }\n      },\n      \"$$ref\": \"#/definitions/ErrorDetail\"\n    },\n    \"msg\": {\n      \"type\": \"string\"\n    },\n    \"responseTime\": {\n      \"type\": \"string\"\n    },\n    \"rid\": {\n      \"type\": \"string\"\n    },\n    \"ts\": {\n      \"type\": \"integer\",\n      \"format\": \"int64\"\n    }\n  },\n  \"$$ref\": \"#/definitions/Response«CheckStructureTreeResponse»\"\n}",
+        "project_id": 535,
+        "catid": 19370,
+        "uid": 11612,
+        "add_time": 1686879456,
+        "up_time": 1701682984,
+        "__v": 0
+      },
+      {
+        "query_path": {
+          "path": "/api/sms/checkUrlStatus",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "api-controller"
+        ],
+        "_id": 139248,
+        "method": "POST",
+        "title": "checkUrlStatus",
+        "path": "/api/sms/checkUrlStatus",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "656d9f29029e3d001dca1361",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"code\": {\n      \"type\": \"integer\",\n      \"format\": \"int32\"\n    },\n    \"data\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"status\": {\n          \"type\": \"boolean\"\n        },\n        \"telephone\": {\n          \"type\": \"string\"\n        }\n      },\n      \"$$ref\": \"#/definitions/CheckUrlStatusResponse\"\n    },\n    \"errorDetail\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"errorInfo\": {\n          \"type\": \"string\"\n        },\n        \"errorStack\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"className\": {\n                \"type\": \"string\"\n              },\n              \"fileName\": {\n                \"type\": \"string\"\n              },\n              \"lineNumber\": {\n                \"type\": \"integer\",\n                \"format\": \"int32\"\n              },\n              \"methodName\": {\n                \"type\": \"string\"\n              },\n              \"nativeMethod\": {\n                \"type\": \"boolean\"\n              }\n            },\n            \"$$ref\": \"#/definitions/StackTraceElement\"\n          }\n        },\n        \"occurTime\": {\n          \"type\": \"string\"\n        },\n        \"reqInfo\": {\n          \"type\": \"string\"\n        }\n      },\n      \"$$ref\": \"#/definitions/ErrorDetail\"\n    },\n    \"msg\": {\n      \"type\": \"string\"\n    },\n    \"responseTime\": {\n      \"type\": \"string\"\n    },\n    \"rid\": {\n      \"type\": \"string\"\n    },\n    \"ts\": {\n      \"type\": \"integer\",\n      \"format\": \"int64\"\n    }\n  },\n  \"$$ref\": \"#/definitions/Response«CheckUrlStatusResponse»\"\n}",
+        "req_body_other": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"sign\": {\n      \"type\": \"string\"\n    },\n    \"type\": {\n      \"type\": \"string\"\n    }\n  },\n  \"$$ref\": \"#/definitions/SendIdentifyingCodeRequest\"\n}",
+        "project_id": 535,
+        "catid": 19370,
+        "uid": 1190,
+        "add_time": 1592634503,
+        "up_time": 1701682985,
+        "__v": 0
+      },
+      {
+        "query_path": {
+          "path": "/api/employee/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "done",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "api-controller"
+        ],
+        "_id": 120098,
+        "method": "POST",
+        "title": "getEntryPending",
+        "path": "/api/employee/list",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "656d9f2828bea80021288006",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"code\": {\n      \"type\": \"integer\",\n      \"format\": \"int32\"\n    },\n    \"data\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"commonName\": {\n            \"type\": \"string\"\n          },\n          \"company\": {\n            \"type\": \"string\"\n          },\n          \"department\": {\n            \"type\": \"string\"\n          },\n          \"displayNumber\": {\n            \"type\": \"string\"\n          },\n          \"domainName\": {\n            \"type\": \"string\"\n          },\n          \"employeeType\": {\n            \"type\": \"string\"\n          },\n          \"givenName\": {\n            \"type\": \"string\"\n          },\n          \"ldapPassword\": {\n            \"type\": \"string\"\n          },\n          \"lifePhotoUrl\": {\n            \"type\": \"string\"\n          },\n          \"mobilePhone\": {\n            \"type\": \"string\"\n          },\n          \"namePinyin\": {\n            \"type\": \"string\"\n          },\n          \"officeWorkplace\": {\n            \"type\": \"string\"\n          },\n          \"pcType\": {\n            \"type\": \"string\"\n          },\n          \"position\": {\n            \"type\": \"string\"\n          },\n          \"promiseEntryTime\": {\n            \"type\": \"integer\",\n            \"format\": \"int64\"\n          },\n          \"rehire\": {\n            \"type\": \"integer\",\n            \"format\": \"int32\"\n          },\n          \"sex\": {\n            \"type\": \"string\"\n          },\n          \"surname\": {\n            \"type\": \"string\"\n          },\n          \"talentType\": {\n            \"type\": \"string\"\n          }\n        },\n        \"$$ref\": \"#/definitions/GetUserBasicInfoResponse\"\n      }\n    },\n    \"errorDetail\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"errorInfo\": {\n          \"type\": \"string\"\n        },\n        \"errorStack\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"className\": {\n                \"type\": \"string\"\n              },\n              \"fileName\": {\n                \"type\": \"string\"\n              },\n              \"lineNumber\": {\n                \"type\": \"integer\",\n                \"format\": \"int32\"\n              },\n              \"methodName\": {\n                \"type\": \"string\"\n              },\n              \"nativeMethod\": {\n                \"type\": \"boolean\"\n              }\n            },\n            \"$$ref\": \"#/definitions/StackTraceElement\"\n          }\n        },\n        \"occurTime\": {\n          \"type\": \"string\"\n        },\n        \"reqInfo\": {\n          \"type\": \"string\"\n        }\n      },\n      \"$$ref\": \"#/definitions/ErrorDetail\"\n    },\n    \"msg\": {\n      \"type\": \"string\"\n    },\n    \"responseTime\": {\n      \"type\": \"string\"\n    },\n    \"rid\": {\n      \"type\": \"string\"\n    },\n    \"ts\": {\n      \"type\": \"integer\",\n      \"format\": \"int64\"\n    }\n  },\n  \"$$ref\": \"#/definitions/Response«List«GetUserBasicInfoResponse»»\"\n}",
+        "req_body_other": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"domainNameList\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\n      }\n    },\n    \"idCardNumberList\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"string\"\n      }\n    },\n    \"idList\": {\n      \"type\": \"array\",\n      \"items\": {\n        \"type\": \"integer\",\n        \"format\": \"int64\"\n      }\n    }\n  },\n  \"$$ref\": \"#/definitions/GetUserBasicInfoRequest\"\n}",
+        "project_id": 535,
+        "catid": 19370,
+        "uid": 1190,
+        "add_time": 1584434661,
+        "up_time": 1701682984,
+        "__v": 0
+      }
+    ]
+  }
+]
