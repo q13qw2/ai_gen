@@ -2,7 +2,6 @@ from langchain.prompts import ChatPromptTemplate
 from src.tools.llm_factory import LLMFactry
 from src.tools.html_resource import HTMLResource
 
-
 def test_gen():
 
     # web_html = (Path().parent / 'web.html').read_text(encoding='utf-8')
@@ -14,9 +13,10 @@ def test_gen():
             ("human", "{query}"),
         ]
     )
-
-    # chat_llm = ChatOpenAI(temperature=0.0, openai_api_key=key)
-    chat_llm = LLMFactry().get_llm('chatglm')
+    url = 'https://aiproxy.baijia.com/proxy/openai/v1'
+    key = '7ee7c1d345a94404bbdfaf1392ae4db5'
+    chat_llm = ChatOpenAI(base_url=url,temperature=0.0, api_key=key,model='gpt-3.5-turbo')
+    # chat_llm = LLMFactry().get_llm('openai')
 
     chain = chat_template | chat_llm
     output = chain.invoke({
